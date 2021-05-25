@@ -1,0 +1,7 @@
+<p>Are you sure want to delete {{ nhanvien }} ?</p>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <a href="{% url 'dashboard' %}">Cancel</a>
+    <input type="submit" value="Delete">
+</form>
