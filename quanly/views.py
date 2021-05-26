@@ -19,7 +19,6 @@ def login_page(request):
         print(username)
         if user is not None:
             login(request, user)
-            messages.success(request, 'login successful')
             return redirect('dashboard')
         else:
             messages.error(request, 'User or password incorrect')
@@ -42,8 +41,8 @@ def register_page(request):
             form.save()
             messages.success(request, 'Account created successfully')
             return redirect('login')
-        else:
-            messages.error(request, 'Account created unsuccessfully')
+        # else:
+        #     messages.error(request, 'Account created unsuccessfully')
 
     context = {'form':form,
                 
