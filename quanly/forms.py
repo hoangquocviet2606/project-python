@@ -12,3 +12,4 @@ class EmpForm(forms.ModelForm):
     class Meta:
         model = Employee
         fields = '__all__'
+        widgets = {'user_created': forms.HiddenInput()}
