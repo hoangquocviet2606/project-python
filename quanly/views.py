@@ -61,7 +61,7 @@ def dashboard(request):
 
 @login_required(login_url='login')
 def add_emp(request):
-    form = EmpForm()
+    form = EmpForm(initial={'user_created':request.user})
     if request.method == "POST":
         form = EmpForm(request.POST)
         if form.is_valid:
